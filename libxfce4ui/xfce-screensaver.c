@@ -429,11 +429,9 @@ xfce_screensaver_new (void)
 
 
 
-static gboolean
-xfce_reset_screen_saver (gpointer user_data)
+gboolean
+xfce_screensaver_reset (XfceScreensaver *saver)
 {
-  XfceScreensaver *saver = user_data;
-
   TRACE ("entering\n");
 
   /* If we found an interface during the setup, use it */
@@ -457,6 +455,16 @@ xfce_reset_screen_saver (gpointer user_data)
 
   /* continue until we're removed */
   return TRUE;
+}
+
+
+
+static gboolean
+xfce_reset_screen_saver (gpointer user_data)
+{
+  XfceScreensaver *saver = user_data;
+
+  return xfce_screensaver_reset (saver);
 }
 
 

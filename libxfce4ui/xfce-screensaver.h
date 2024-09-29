@@ -40,6 +40,8 @@ typedef XfceScreensaver XfceScreenSaver;
 
 XfceScreensaver    *xfce_screensaver_new           (void);
 
+gboolean            xfce_screensaver_reset         (XfceScreensaver     *saver);
+
 void                xfce_screensaver_inhibit       (XfceScreensaver     *saver,
                                                     gboolean             inhibit);
 
